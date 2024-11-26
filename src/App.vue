@@ -1,30 +1,38 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <SearchBarComponent />
+  <HeaderComponent />
+  <div class="flex">
+    <div class="w-3/4">
+      <ChartComponent />
+    </div>
+    <div class="w-1/4">
+      <SummaryComponent />
+    </div>
   </div>
-  <HelloWorld msg="Vite + Vue" />
+  <TabComponent />
+  <InstrumentListComponent />
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+<script>
+import SearchBarComponent from './components/SearchBarComponent.vue'
+import HeaderComponent from './components/HeaderComponent.vue'
+import ChartComponent from './components/ChartComponent.vue'
+import SummaryComponent from './components/SummaryComponent.vue'
+import TabComponent from './components/TabComponent.vue'
+import InstrumentListComponent from './components/InstrumentListComponent.vue'
+
+export default {
+  name: "App",
+  data() {
+    return {
+    };
+  },
+  computed: {
+
+  },
+  methods: {
+
+  },
+  components: { SearchBarComponent, HeaderComponent, ChartComponent, SummaryComponent, TabComponent, InstrumentListComponent }
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
+</script>
